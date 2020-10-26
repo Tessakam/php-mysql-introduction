@@ -26,7 +26,7 @@ Then we will create a login & registration form for the students to manage their
     - `last_name`
     - `email` 
     - `created_at` *(auto fills in the timestamp when you create an entry, lookup how to do this, hint:look for this column name)*
-    --> Modify table / Name: Created at / Type: datatime / Default: CURRENT_TIMESTAMP
+    TIP > Modify table / Name: Created at / Type: datatime / Default: CURRENT_TIMESTAMP
     https://stackoverflow.com/questions/43929300/mysql-column-that-auto-fills-time-when-data-is-inserted-in-row/43929332
     
     ### Step 2: 
@@ -36,9 +36,9 @@ Then we will create a login & registration form for the students to manage their
 ![Lets goooooo!!!](resources/rambo.png)
 
 - [x] Create `index.php`, `insert.php`
-- Include the `connection.php` file in both, but make sure your `PHP` code won't run if the connection file isn't included
-- Create a form that allows you to fill in the table with your data in `insert.php`
-- Make sure your form requires every column of the table to be filled
+- [x] Include the `connection.php` file in both, but make sure your `PHP` code won't run if the connection file isn't included
+- [x] Create a form that allows you to fill in the table with your data in `insert.php`
+- [x] Make sure your form requires every column of the table to be filled
 - Test by inserting your data
 - Check your database program to see if all your data is correctly entered into the database
 
