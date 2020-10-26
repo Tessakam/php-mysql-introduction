@@ -18,9 +18,9 @@ Then we will create a login & registration form for the students to manage their
 
 ### Step 1: Create a database
 - Go to your local database manager
-- Create a database, called `becode`
-- Create a table, called `student`
-- Give it the following structure:
+- [x] Create a database, called `becode`
+- [x] Create a table, called `student`
+- [x] Give it the following structure:
     - `id` | Primary Key & Index | Auto Increment
     - `first_name`
     - `last_name`
@@ -30,12 +30,12 @@ Then we will create a login & registration form for the students to manage their
     https://stackoverflow.com/questions/43929300/mysql-column-that-auto-fills-time-when-data-is-inserted-in-row/43929332
     
     ### Step 2: 
-- Create a `connection.php` file with a working PDO connection in it, like you learned from previous exercises.
+- [x] Create a `connection.php` file with a working PDO connection in it, like you learned from previous exercises.
 
 ### Step 3: 
 ![Lets goooooo!!!](resources/rambo.png)
 
-- Create `index.php`, `insert.php`
+- [x] Create `index.php`, `insert.php`
 - Include the `connection.php` file in both, but make sure your `PHP` code won't run if the connection file isn't included
 - Create a form that allows you to fill in the table with your data in `insert.php`
 - Make sure your form requires every column of the table to be filled
