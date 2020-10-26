@@ -9,10 +9,25 @@ class Connection
         require 'includes/config.php'; //user and password of database
         $pdo = openConnection($dbuser, $dbpass); //connects with database
 
+        session_start();
+
+        if (!isset($_SESSION["id"])) {
+            $_SESSION["id"] = "";
+        }
+        if (!isset($_SESSION["firstname"])) {
+            $_SESSION["firstname"] = "";
+        }
+    }
+}
+
+class addData
+{
+    public function __construct($pdo)
+    {
         if (isset($_POST['submit'])) {
 
             if (!empty($_POST['id']) && !empty($_POST['firstName']) && !empty($_POST['lastname'] && !empty($_POST['email']))) {
-                $handle = $pdo->prepare('INSERT INTO student (id, first_name, last_name, email, created_at) VALUES (:id, :firstname, :lastname, :email, :date)');
+                $handle = $pdo->prepare('INSERT INTO student(id, first_name, last_name, email) VALUES (:id, :first_name, :last_name, :email, :date)');
                 $message = 'Your record has been added';
             }
 
@@ -25,8 +40,6 @@ class Connection
         }
     }
 }
-
-
 
 $connection = new Connection();
 
