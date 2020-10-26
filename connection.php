@@ -20,3 +20,4 @@ function openConnection($dbuser, $dbpass): PDO
 
 
 
+

@@ -17,20 +17,25 @@ require 'insert.php';
         <br>
         <H3>mySQL database: BECODE</H3>
         <br>
-    </form>
 
-    <form>
+        <?php if (isset($message)): ?>
+            <div class="alert alert-success" role="alert">
+                <?php echo $message ?>
+            </div>
+        <?php endif; ?>
+
+
         <div class="form-group">
             <label for="formGroupExampleInput">ID</label>
             <input type="text" class="form-control" name="id" id="id" placeholder="id" required>
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">First name</label>
-            <input type="text" class="form-control" name="firstname" id="firstName" placeholder="firstname" required>
+            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="firstname" required>
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Last name</label>
-            <input type="text" class="form-control" name="lastname" id="lastName" placeholder="lastname" required>
+            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="lastname" required>
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Email</label>
