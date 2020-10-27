@@ -12,6 +12,8 @@ class Database
     {
         $dbhost = "localhost";
         $db = "becode";
+        $dbuser = "tessa";
+        $dbpass = "becode";
         $driverOptions = [
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -19,7 +21,6 @@ class Database
         ];
         return new PDO('mysql:host=' . $dbhost . ';dbname=' . $db, $dbuser, $dbpass, $driverOptions);
     }
-
 }
 
 

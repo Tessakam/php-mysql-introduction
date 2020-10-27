@@ -10,9 +10,9 @@ class Controller
             $lastname = $_POST['lastname'];
             $email = $_POST['email'];
 
-            $students = new Student($firstname, $lastname, $email);
+            $students = new Studentinsert ($firstname, $lastname, $email);
             return $students;
         }
+        echo $message = 'Your record has been added';
     }
-
 }

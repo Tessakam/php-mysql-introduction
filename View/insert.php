@@ -5,7 +5,6 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-
 require 'includes/header.php';
 
 ?>
@@ -29,11 +28,11 @@ require 'includes/header.php';
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">First name</label>
-            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="firstname" required>
+            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="first name" required>
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Last name</label>
-            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="lastname" required>
+            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="last name" required>
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Email</label>

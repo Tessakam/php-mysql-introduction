@@ -5,15 +5,19 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 //Folder Model
-require_once "Model/Connection.php";
-require_once "Model/Student.php";
-require_once "Model/Studentloader.php";
+require "Model/Connection.php";
+require "Model/Student.php";
+require "Model/Studentloader.php";
+require "Model/Studentinsert.php";
 
 //Folder View
-require_once "View/insert.php";
+require "View/insert.php";
 
 //Folder Controller
-require_once "Controller/Controller.php";
+require "Controller/Controller.php";
+
+//Config file for database login
+require "includes/config.php";
 
 $controller = new Controller();
 $controller->render($_GET, $_POST);

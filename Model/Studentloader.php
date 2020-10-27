@@ -1,23 +1,24 @@
 <?php
 
 
-class Studentloader extends Connection
+class Studentloader extends Database
 {
     private array $students = [];
 
     public function __construct(array $students)
     {
-        $handle = $this->openConnection()->prepare("INSERT * FROM student");
+        $connection = new Database();
+        $handle = $connection->openConnection($dbuser, $dbpass);
+
+        $handle = $handle->prepare("INSERT INTO student (first_name, last_name, email) VALUES (:firstname, :lastname, :email)");
+        $handle->bindValue(':firstname', $_POST['firstname']);
+        $handle->bindValue(':lastname', $_POST['lastname']);
+        $handle->bindValue(':email', $_POST['email']);
         $handle->execute();
-        foreach ($handle->fetchAll() as $student) {
-            $this->student[$student['id']] = new $student ($student['firstname'], $student['lastname'], $student['email']);
-        }
     }
 
     public function getStudents(): array
     {
         return $this->students;
     }
-
-
 }

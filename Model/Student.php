@@ -1,7 +1,7 @@
 <?php
 
 
-class Student extends Connection
+class Student extends Database
 {
     private string $firstname;
     private string $lastname;
