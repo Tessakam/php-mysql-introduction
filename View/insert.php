@@ -42,8 +42,36 @@ require 'includes/header.php';
         <div>
             <p><input type="submit" class="btn btn-primary" name="submit" value="Submit"></p>
         </div>
-
     </form>
+
+    <!--get all students from the database -->
+    <?
+    foreach ($handle->fetchAll() as $student):
+    ?>
+
+    <table style="width:70%" class="center">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Personal page</th>
+        </tr>
+        <tr>
+            <td><? $student->getFirstName() ?></td>
+            <td><? $student->getLastName() ?></td>
+            <td><? $student->getEmail() ?></td>
+            <td><?php echo "<a href='#'>{$student->getName()}</a>"</td>
+            // <a href="page.html">Click here</a>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+            <td>personal page</td>
+        </tr>
+    </table>
+    <br>
+
 
 </section>
 
