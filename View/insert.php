@@ -6,7 +6,6 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 require 'includes/header.php';
-
 ?>
 
 <section class="container">
@@ -44,9 +43,9 @@ require 'includes/header.php';
         </div>
     </form>
 
-    <!--get all students from the database -->
-    <?
-    foreach ($handle->fetchAll() as $student):
+    <!--get all students from the database with studentloader-->
+    <?php
+    foreach ($handle->getStudent() as $student):
     ?>
 
     <table style="width:70%" class="center">
@@ -60,9 +59,9 @@ require 'includes/header.php';
             <td><? $student->getFirstName() ?></td>
             <td><? $student->getLastName() ?></td>
             <td><? $student->getEmail() ?></td>
-            <td><?php echo "<a href='#'>{$student->getName()}</a>"</td>
-            // <a href="page.html">Click here</a>
+            <td><?php echo "<a href='#'>{$student->getName()}</a>";?></td>
         </tr>
+
         <tr>
             <td>Eve</td>
             <td>Jackson</td>
@@ -89,5 +88,6 @@ require 'includes/header.php';
 </body>
 
 <?php require 'includes/footer.php' ?>
+<?php endforeach; ?>
 
 </html>

@@ -16,3 +16,4 @@ class Controller
         echo $message = 'Your record has been added';
     }
 }
+

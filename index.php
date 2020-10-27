@@ -19,5 +19,8 @@ require "Controller/Controller.php";
 //Config file for database login
 //require "includes/config.php";
 
-$controller = new Controller();
+$controller = new Controller(); // link with Controller.php = new record
+$loader = new Studentloader(); // link with Studentloader.php = show all records
 $controller->render($_GET, $_POST);
+
+

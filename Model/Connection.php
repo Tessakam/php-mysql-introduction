@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 class Database
 
 {    //connect with database "becode.sql"
-    public function openConnection ($dbuser, $dbpass): PDO
+    public function openConnection (): PDO
     {
         $dbhost = "localhost";
         $db = "becode";
