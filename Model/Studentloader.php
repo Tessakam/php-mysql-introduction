@@ -7,7 +7,6 @@ class Studentloader extends Connection
 
     public function __construct(array $students)
     {
-
         $handle = $this->openConnection()->prepare("INSERT * FROM student");
         $handle->execute();
         foreach ($handle->fetchAll() as $student) {
@@ -17,6 +16,8 @@ class Studentloader extends Connection
 
     public function getStudents(): array
     {
-        return $this->Students;
+        return $this->students;
     }
+
+
 }

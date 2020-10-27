@@ -1,60 +1,66 @@
 <?php
 
 declare(strict_types=1);
-
-class Student
-{
-    private string $firstname, $lastname, $email;
-
-    public function render(array $GET, array $POST)
-    {
-        require 'includes/config.php'; //user and password of database
-        require 'Model/connection.php';
-    }
-
-    public function __construct(string $firstname, string $lastname, string $email)
-    {
-
-        $connection = new Connection();
-        $handle = $connection->openConnection($dbuser, $dbpass);
-        $handle->getPdo();
-
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->email = $email;
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
 
-        $handle = $handle->prepare('INSERT INTO student(first_name, last_name, email) VALUES (:first_name, :last_name, :email)');
+require 'includes/header.php';
 
-        $handle->bindValue(':firstname', $firstname);
-        $handle->bindValue(':lastname', $lastname);
-        $handle->bindValue(':email', $email);
-        $handle->execute();
-    }
+?>
 
+<section class="container">
+    <form action="index.php" method="post">
+        <br>
+        <H3>mySQL database: BECODE</H3>
+        <br>
 
-    /*if (isset($_POST['submit'])) {
-
-        if (!empty($_POST['id']) && !empty($_POST['firstName']) && !empty($_POST['lastname'] && !empty($_POST['email']))) {
-
-            $message = 'Your record has been added';
-        } else {
-            echo "Error: your record has not been added";
-        }*/
+        <?php if (isset($message)): ?>
+            <div class="alert alert-success" role="alert">
+                <?php echo $message ?>
+            </div>
+        <?php endif; ?>
 
 
-    public function addRecord($pdo)
-    {
-        $firstName = $_POST['first_name'];
-        $lastName = $_POST['last_name'];
-        $email = $_POST['email'];
-    }
+        <div class="form-group">
+            <label for="formGroupExampleInput">ID</label>
+            <input type="text" class="form-control" name="id" id="id" placeholder="id">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">First name</label>
+            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="firstname" required>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Last name</label>
+            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="lastname" required>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Email</label>
+            <input type="text" class="form-control" name="email" id="email" placeholder="email" required>
+        </div>
 
+        <div>
+            <p><input type="submit" class="btn btn-primary" name="submit" value="Submit"></p>
+        </div>
 
-}
+    </form>
 
+</section>
 
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
 
+<?php require 'includes/footer.php' ?>
 
-//Loads database into insert.php
-//$connection->render($_GET, $_POST);
+</html>
