@@ -3,15 +3,12 @@
 
 class Studentinsert extends Database
 {
-    public function __construct()
+    public function __construct($firstname, $lastname, $email)
     {
-        $connection = new Database();
-        $handle = $connection->openConnection($dbuser, $dbpass);
-
-        $handle = $handle->prepare("INSERT * FROM student");
-
-        foreach ($handle->fetchAll() as $student) {
-            $this->student[$student['id']] = new $student ($student['firstname'], $student['lastname'], $student['email']);
-        }
+        $handle = $this->openConnection()->prepare('INSERT INTO student (first_name, last_name, email) VALUES (:firstname, :lastname, :email)');
+        $handle->bindValue(':firstname', $firstname);
+        $handle->bindValue(':lastname', $lastname);
+        $handle->bindValue(':email', $email);
+        $handle->execute();
     }
 }

@@ -17,7 +17,7 @@ require "View/insert.php";
 require "Controller/Controller.php";
 
 //Config file for database login
-require "includes/config.php";
+//require "includes/config.php";
 
 $controller = new Controller();
 $controller->render($_GET, $_POST);
