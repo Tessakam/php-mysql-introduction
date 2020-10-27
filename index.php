@@ -7,8 +7,8 @@ error_reporting(E_ALL);
 
 //include all your model files here
 require 'includes/header.php';
-require 'connection.php';
-require 'insert.php';
+require 'Model/connection.php';
+require 'View/insert.php';
 
 ?>
 
@@ -66,4 +66,3 @@ require 'insert.php';
 <?php require 'includes/footer.php' ?>
 
 </html>
-
