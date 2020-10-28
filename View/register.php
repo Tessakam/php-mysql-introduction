@@ -36,7 +36,36 @@ require 'includes/header.php';
         <div>
             <p><input type="submit" class="btn btn-primary" name="submit" value="Submit"></p>
         </div>
+
+        <!-- Login page -->
+        <br>
+        <H3>mySQL database: login</H3>
+        <br>
+
+        <form class = "form-signin " role = "form"
+              action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);
+              ?>" method = "post">
+            <input type = "text" class = "form-control mr-sm-2"
+                   name = "username" placeholder = "username"
+                   required autofocus></br>
+            <input type = "password" class = "form-control mr-sm-2"
+                   name = "password" placeholder = "password" required> <br>
+            <button class = "btn btn-primary" type = "submit"
+                    name = "login">Login</button>
+        </form>
+
+        <?php if (isset($errormessage)): ?>
+            <div class="alert alert-success" role="alert">
+                <?php echo $errormessage ?>
+            </div>
+        <?php endif; ?>
+
+
     </form>
+
+    <?php
+
+    ?>
 
 </section>
 

@@ -14,13 +14,12 @@ class Studentloader extends Database
         $handle = $this->openConnection()->prepare("SELECT * FROM student"); // select all from database student
         $handle->execute();
 
-        //$handle fetch already array
         foreach ($handle->fetchAll() as $student) {
-        array_push($this->students, new Student($student['first_name'], $student['last_name'], $student['email'], $student['id']));
+            array_push($this->students, new Student($student['first_name'], $student['last_name'], $student['email'], $student['id']));
+            //!! make sure the order is the same as the properties - as indicated in student!!
 
-        //$student['id'] = new Student ($student['first_name'], $student['last_name'], $student['email'], $student['id']);
-
-            //make sure the order is the same as the properties - as indicated in student!!
+            //error "allstudent undefined" - reason "$handle fetch already array so created array into array"
+            //original code: $student['id'] = new Student ($student['first_name'], $student['last_name'], $student['email'], $student['id']);
         }
     }
 
@@ -28,5 +27,4 @@ class Studentloader extends Database
     {
         return $this->students;
     }
-
 }

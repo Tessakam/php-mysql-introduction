@@ -45,11 +45,11 @@ Then we will create a login & registration form for the students to manage their
 ### Step 4:
 We have managed to push our info to a local database, now let's try and pull that same information out of there, follow these instructions:
 
-- On `index.php`, list a table with summaries of most of the details of all people
+- [x] On `index.php`, list a table with summaries of most of the details of all people
 - Make sure the table shows the following:
-    - Their first name
-    - Their last name
-    - Their email
+    - [x] Their first name
+    - [x] Their last name
+    - [x] Their email
     - A link to their personal page (`profile.php?user=$user_id`) (the link can also be, on their name or any other column you prefer)
 
 ### Step 5:
@@ -65,7 +65,7 @@ Next up we want to create some delete and edit functionality, sadly though we ca
 Imagine a webapp where you can edit other people's info, or delete their profile... That wouldn't be good... 
 So let's make a login / registration system:
 
-- Create a `login.php` file and fill it up with a login form (email/password)
+- [x] Create a `login.php` file and fill it up with a login form (email/password)
 - Rename `insert.php` to `register.php` and add a password & password confirmation field to the form
 - Create an `auth.php` file and write both the login and registration logic in them
 - The registration logic should:

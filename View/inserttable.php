@@ -7,8 +7,9 @@ require 'includes/header.php';
 <!--get all students from the database with studentloader-->
     <table style="width:70%" class="center">
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
+            <th>ID number</th>
+            <th>First name</th>
+            <th>Last name</th>
             <th>Email</th>
             <th>Personal page</th>
         </tr>
@@ -21,16 +22,12 @@ require 'includes/header.php';
                 <td><?php echo $student->getFirstName(); ?></td>
                 <td><?php echo $student->getLastName(); ?></td>
                 <td><?php echo $student->getEmail(); ?></td>
+                <!-- No result = no profile page -->
                 <td><a href=index.php?user= <?php echo $student->getFirstName(); ?> </a></td>
+
             </tr>
         <?php endforeach; ?>
 
-        <tr>
-            <td>Eve</td>
-            <td>Jackson</td>
-            <td>94</td>
-            <td>personal page</td>
-        </tr>
     </table>
     <br>
 
