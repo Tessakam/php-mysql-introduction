@@ -1,12 +1,7 @@
 <?php
-
-declare(strict_types=1);
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-
 require 'includes/header.php';
 ?>
+<body>
 
 <section class="container">
     <form action="index.php" method="post">
@@ -14,7 +9,7 @@ require 'includes/header.php';
         <H3>mySQL database: BECODE</H3>
         <br>
 
-        <?php if (isset($message)): ?>
+        <?php if (isset($students)): ?>
             <div class="alert alert-success" role="alert">
                 <?php echo $message ?>
             </div>
@@ -43,35 +38,6 @@ require 'includes/header.php';
         </div>
     </form>
 
-    <!--get all students from the database with studentloader-->
-    <?php
-    foreach ($handle->getStudent() as $student):
-    ?>
-
-    <table style="width:70%" class="center">
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
-            <th>Personal page</th>
-        </tr>
-        <tr>
-            <td><? $student->getFirstName() ?></td>
-            <td><? $student->getLastName() ?></td>
-            <td><? $student->getEmail() ?></td>
-            <td><?php echo "<a href='#'>{$student->getName()}</a>";?></td>
-        </tr>
-
-        <tr>
-            <td>Eve</td>
-            <td>Jackson</td>
-            <td>94</td>
-            <td>personal page</td>
-        </tr>
-    </table>
-    <br>
-
-
 </section>
 
 <!-- Optional JavaScript -->
@@ -88,6 +54,5 @@ require 'includes/header.php';
 </body>
 
 <?php require 'includes/footer.php' ?>
-<?php endforeach; ?>
 
 </html>

@@ -3,7 +3,7 @@
 
 class Controller
 {
-    public function render(array $GET, array $POS)
+    public function render(array $GET, array $POST)
     {
         if (!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['email'])) {
             $firstname = $_POST['firstname'];
@@ -13,7 +13,10 @@ class Controller
             $students = new Studentinsert ($firstname, $lastname, $email);
             return $students;
         }
-        echo $message = 'Your record has been added';
+        $message = 'Your record has been added';
+
+        require 'View/insert.php';
     }
+
 }
 

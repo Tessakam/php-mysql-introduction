@@ -10,17 +10,16 @@ require "Model/Student.php";
 require "Model/Studentloader.php";
 require "Model/Studentinsert.php";
 
-//Folder View
-require "View/insert.php";
-
 //Folder Controller
-require "Controller/Controller.php";
+if(isset($_GET['page'])){ // http://mysqlintroduction.local/?page=table
+    require "Controller/Controllertable.php";
+    $controller = new Controllertable();
+} else{
+    require "Controller/Controller.php";
+    $controller = new Controller(); // link with Controller.php = new record
+}
+$controller->render($_GET, $_POST);
 
 //Config file for database login
 //require "includes/config.php";
-
-$controller = new Controller(); // link with Controller.php = new record
-$loader = new Studentloader(); // link with Studentloader.php = show all records
-$controller->render($_GET, $_POST);
-
 

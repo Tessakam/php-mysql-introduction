@@ -5,22 +5,23 @@ class Studentloader extends Database
 {
     private array $students = [];
 
-    public function __construct(array $students)
+    public function __construct()
 
     {
         //$connection = new Database($pdo);
         //$handle = $connection->openConnection();
 
-        $handle = $this->Connection()->prepare("INSERT * FROM student");
+        $handle = $this->openConnection()->prepare("SELECT * FROM student"); // select all from database student
         $handle->execute();
+
+        //$handle fetch already array
         foreach ($handle->fetchAll() as $student) {
-        $this->student[$student['id']] = new $student ($student['firstname'], $student['lastname'], $student['email']);
+        array_push($this->students, new Student($student['first_name'], $student['last_name'], $student['email'], $student['id']));
+
+        //$student['id'] = new Student ($student['first_name'], $student['last_name'], $student['email'], $student['id']);
+
+            //make sure the order is the same as the properties - as indicated in student!!
         }
-
-        $allStudents = new Studentloader($students);
-        return $allStudents;
-        //var_dump($allStudents);
-
     }
 
     public function getStudents(): array

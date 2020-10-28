@@ -10,6 +10,6 @@ class Studentinsert extends Database
         $handle->bindValue(':lastname', $lastname);
         $handle->bindValue(':email', $email);
         $handle->execute();
-        echo $message = 'Your record has been added';
+        //echo $message = 'Your record has been added';
     }
 }
