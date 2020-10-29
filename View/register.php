@@ -4,10 +4,14 @@ require 'includes/header.php';
 <body>
 
 <section class="container">
+
     <form action="index.php" method="post">
+        <div>
         <br>
         <H3>mySQL database: BECODE registration</H3>
+        <H5>Already a student? <a href="http://mysqlintroduction.local/?page=login">Login </H5>
         <br>
+        </div>
 
         <?php if (isset($students)): ?>
             <div class="alert alert-success" role="alert">
