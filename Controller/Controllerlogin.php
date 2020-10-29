@@ -1,9 +1,13 @@
 <?php
+
 // Create an auth.php file and write both the login and registration logic in them
+
+require 'Model/Connection.php';
+require 'Model/Auth.php';
 
 class Controllerlogin
 {
-    public function render(array $GET, array $POST)
+    public function render()
     {
         session_start();
         $auth = new Auth();
@@ -27,8 +31,6 @@ class Controllerlogin
 
             $checkAuth = $auth->checkPassword($password,$h_password);
 
-            require 'View/register.php'; // insert.php
-            require 'Model/Auth.php';
         }
     }
 }

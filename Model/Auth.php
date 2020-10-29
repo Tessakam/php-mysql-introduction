@@ -1,5 +1,7 @@
 <?php
 
+// To do: Check if the filled in email can be found on a user with that credential
+// Needs to be added in Connection
 
 class Auth
 {

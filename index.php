@@ -11,21 +11,28 @@ require "Model/Connection.php";
 require "Model/Student.php";
 require "Model/Studentloader.php";
 require "Model/Studentinsert.php";
-require "Auth";
+require "Model/Auth.php";
 
 //Folder Controller
-require "Controller/Controllerlogin.php";
 
-if(isset($_GET['page'])){ // http://mysqlintroduction.local/?page=table
+if (isset($_GET['page'])){
     require "Controller/Controllertable.php";
     $controller = new Controllertable();
-} else{
+} else {
     require "Controller/Controller.php";
     $controller = new Controller(); // link with Controller.php = new record
 }
+
+// http://mysqlintroduction.local/?page=table
+// To do: create seprate if statements
+// 1. New student= register first
+// 2. Becode stuent = login
+// Add SESSION so the page doesn't go automatically to the overview
 
 $controller->render($_GET, $_POST);
 
 //Config file for database login
 //require "includes/config.php";
+
+
 

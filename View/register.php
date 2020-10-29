@@ -7,10 +7,10 @@ require 'includes/header.php';
 
     <form action="index.php" method="post">
         <div>
-        <br>
-        <H3>mySQL database: BECODE registration</H3>
-        <H5>Already a student? <a href="http://mysqlintroduction.local/?page=login">Login </H5>
-        <br>
+            <br>
+            <H3>mySQL database: BECODE registration</H3>
+            <H5>Already a student? <a href="http://mysqlintroduction.local/?page=login">Login </a></H5>
+            <br>
         </div>
 
         <?php if (isset($students)): ?>

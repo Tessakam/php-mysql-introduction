@@ -27,18 +27,12 @@ require 'includes/header.php';
             </button>
         </form>
 
-        <!--
-        <?php if (isset($errormessage)): ?>
-            <div class="alert alert-warning" role="alert">
-                <?php echo $errormessage ?>
-            </div>
+        <?php if (isset($checkAuth)): ?>
+        <div class="alert alert-warning" role="alert">
+            <?php echo $checkAuth ?>
+        </div>
         <?php endif; ?>
 
-        <?php if (isset($successmessage)): ?>
-            <div class="alert alert-success" role="alert">
-                <?php echo $successmessage ?>
-            </div>
-        <?php endif; ?>-->
     </form>
 
 </div>
@@ -57,4 +51,4 @@ require 'includes/header.php';
 
 <?php require 'includes/footer.php' ?>
 
-</html>
+        </html>

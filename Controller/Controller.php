@@ -13,10 +13,10 @@ class Controller
             $students = new Studentinsert ($firstname, $lastname, $email);
             return $students;
         }
+
         $message = 'Your record has been added';
 
-        require 'View/insert.php';
+        require 'View/register.php';
     }
-
 }
 
