@@ -11,8 +11,11 @@ require "Model/Connection.php";
 require "Model/Student.php";
 require "Model/Studentloader.php";
 require "Model/Studentinsert.php";
+require "Auth";
 
 //Folder Controller
+require "Controller/Controllerlogin.php";
+
 if(isset($_GET['page'])){ // http://mysqlintroduction.local/?page=table
     require "Controller/Controllertable.php";
     $controller = new Controllertable();
