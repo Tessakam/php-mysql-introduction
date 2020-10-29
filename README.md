@@ -66,7 +66,7 @@ Imagine a webapp where you can edit other people's info, or delete their profile
 So let's make a login / registration system:
 
 - [x] Create a `login.php` file and fill it up with a login form (email/password)
-- Rename `insert.php` to `register.php` and add a password & password confirmation field to the form
+- [x] Rename `insert.php` to `register.php` and add a password & password confirmation field to the form
 - Create an `auth.php` file and write both the login and registration logic in them
 - The registration logic should:
     - Check if the email is valid (validate all other fields as well if necessary)

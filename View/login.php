@@ -3,22 +3,43 @@ require 'includes/header.php';
 ?>
 
 <body>
-<div class = "container">
+<div class="container">
+    <form action="" method="post">
 
-    <br>
-    <H3>mySQL database: login </H3>
-    <br>
+        <!-- Login page -->
+        <br>
+        <H3>mySQL database: BECODE login</H3>
+        <br>
 
-    <div class="form-group">
-        <label for="formGroupExampleInput">Your email</label>
-        <input value="<?php echo $_SESSION['email']; ?>"
-                type="text" class="form-control" name="email" id="email" required>
-    </div>
-    <div class="form-group">
-        <label for="formGroupExampleInput2">Password</label>
-        <input type="text" class="form-control" name="password" id="password"  required>
-    </div>
+        <form class="form-signin " role="form"
+              action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+            <!--$_SERVER["PHP_SELF"] sends the submitted form data to the page itself, instead of jumping to a different page. This way, the user will get error messages on the same page as the form.
+            The htmlspecialchars() function converts special characters to HTML entities.-->
 
+            <input type="text" class="form-control mr-sm-2"
+                   name="username" placeholder="username" required><br>
+
+            <input type="password" class="form-control mr-sm-2"
+                   name="password" placeholder="password" required><br>
+
+            <button class="btn btn-primary" type="submit"
+                    name="login">Login
+            </button>
+        </form>
+
+        <!--
+        <?php if (isset($errormessage)): ?>
+            <div class="alert alert-warning" role="alert">
+                <?php echo $errormessage ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (isset($successmessage)): ?>
+            <div class="alert alert-success" role="alert">
+                <?php echo $successmessage ?>
+            </div>
+        <?php endif; ?>-->
+    </form>
 
 </div>
 <!-- Optional JavaScript -->

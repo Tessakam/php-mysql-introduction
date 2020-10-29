@@ -15,60 +15,43 @@ require 'includes/header.php';
             </div>
         <?php endif; ?>
 
+        <!--not necessary for the user - mySQL generates this automatically
+        <div class="form-group">
+            <label for="ID">ID</label>
+            <input type="text" class="form-control" name="id" id="id" placeholder="id" required>
+        </div>-->
 
         <div class="form-group">
-            <label for="formGroupExampleInput">ID</label>
-            <input type="text" class="form-control" name="id" id="id" placeholder="id">
+            <label for="First name">First name</label>
+            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="first name" required>
         </div>
         <div class="form-group">
-            <label for="formGroupExampleInput2">First name</label>
-            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="first name" >
+            <label for="Last name">Last name</label>
+            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="last name" required>
         </div>
         <div class="form-group">
-            <label for="formGroupExampleInput2">Last name</label>
-            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="last name" >
+            <label for="Email">Email</label>
+            <input type="text" class="form-control" name="email" id="email" placeholder="email" required>
+        </div>
+
+        <!-- add a password & password confirmation field to the form-->
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="text" class="form-control" name="password" id="password" placeholder="password" required>
         </div>
         <div class="form-group">
-            <label for="formGroupExampleInput2">Email</label>
-            <input type="text" class="form-control" name="email" id="email" placeholder="email" >
+            <label for="ConfirmPassword">Confirm password</label>
+            <input type="text" class="form-control" name="confirmPassword" id="confirmPassword"
+                   placeholder="confirm password" required>
         </div>
 
         <div>
             <p><input type="submit" class="btn btn-primary" name="submit" value="Submit"></p>
         </div>
 
-        <!-- Login page -->
-        <br>
-        <H3>mySQL database: BECODE login</H3>
-        <br>
-
-        <form class = "form-signin " role = "form"
-              action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);
-              ?>" method = "post">
-            <input type = "text" class = "form-control mr-sm-2"
-                   name = "username" placeholder = "username"><br>
-            <input type = "password" class = "form-control mr-sm-2"
-                   name = "password" placeholder = "password"><br>
-            <button class = "btn btn-primary" type = "submit"
-                    name = "login">Login</button>
-        </form>
-
-        <?php if (isset($errormessage)): ?>
-            <div class="alert alert-warning" role="alert">
-                <?php echo $errormessage ?>
-            </div>
-        <?php endif; ?>
-
-        <?php if (isset($successmessage)): ?>
-            <div class="alert alert-success" role="alert">
-                <?php echo $successmessage ?>
-            </div>
-        <?php endif; ?>
-
     </form>
 
     <?php
-
     ?>
 
 </section>

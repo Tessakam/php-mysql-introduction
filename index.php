@@ -21,7 +21,6 @@ if(isset($_GET['page'])){ // http://mysqlintroduction.local/?page=table
     $controller = new Controller(); // link with Controller.php = new record
 }
 
-
 $controller->render($_GET, $_POST);
 
 //Config file for database login
